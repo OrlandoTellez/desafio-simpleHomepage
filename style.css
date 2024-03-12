@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --bg-dark: #111729;
+    --color-dark: #FFFFFF;
+    --bg-light: #F2F9FE;
+    --color-light: #111729;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 100%;
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all ease .4s;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    max-width: 1024px;
+}
+
+
+.container .menu-icon{
+    position: relative;
+    z-index: 20;
+}
+
+.container header nav{
+    position: absolute;
+    height: 100vh;
+    width: 80vw;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light);
+    transition: all ease .4s;
+    
+}
+
+.container header .active{
+    transform: translate(-600px);
+}
+
+.container header nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container header nav ul li{
+    list-style: none;
+
+}
+
+.container header nav ul li a{
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image{
+    width: 100%;
+    max-width: 475px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.hero-image figure{
+    width: 100%;
+}
+
+.hero-image figure img{
+    max-width: 100%;
+}
+
+/* Esto por si se necesita un hero con fondo 
+.hero-section{
+    background-image: url("/assets/img/hero-image-simple-homepage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    margin-top: 35px;
+} */
+
+.info-section{
+    color: var(--color-light);
+    width: 100%;
+    padding: 20px;
+}
+
+.info-section article{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-section article p{
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.info-section article h1{
+    font-size: 2.2em;
+}
+
+.info-section .boton-container a{
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 10px;
+    border-bottom: 1px solid #2A4DD0;
+}
+
+.info-section .boton-container a:nth-child(1){
+    color: var(--color-dark);
+    background-color: #2A4DD0;
+}
+
+
+/* Modo Oscuro */
+.theme{
+    text-align: center;
+}
+
+#toggle{
+    display: none;
+}
+
+.dark {
+    background-color: var(--bg-dark);
+    color: var(--color-dark);
+    
+}
+
+.dark,
+.dark * {
+    /* This will apply the dark class to all child elements */
+    background-color: var(--bg-dark);
+    color: var(--color-dark);
+    
+}
+
+.dark .menu-icon svg,
+.dark .container header,
+.dark .container header .nav,
+.dark .container .nav ul li a {
+    color: var(--color-dark);
+    background-color: var(--bg-dark);
+}
+
+/* Add more specific styles for other components here */
+
+
+@media only screen and (min-width: 1024px){
+    body{
+        transition: all ease .0s;
+    }
+
+    .container header{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px;
+        position: fixed;
+        gap: 70px;
+        background-color: var(--bg-light);
+    }
+
+    .container .menu-icon{
+        display: none;
+    }
+
+    .container header nav{
+        position: static;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 68%;
+        transition: all ease .0s;
+
+    }
+
+    .container header .active{
+        transform: translate(0px);
+    }
+
+    .container header nav ul{
+        display: flex;
+        flex-direction: row;
+        margin-left: 0px;
+        margin-top: 0px;
+        justify-content: end;
+        gap: 30px;
+        height: 100%;
+        
+    }
+
+    .container header nav ul li a{
+        color: #111729;
+        font-weight: 500;
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        margin-top: 60px;
+    }
+
+    .item1 {
+        grid-column: 2; 
+        grid-row: 1; 
+    }
+      
+    .item2 {
+        grid-column: 1; 
+        grid-row: 1; 
+    }
+
+    .info-section article h1{
+        font-size: 2.9em;
+    }
+    
+    .info-section article p{
+        font-size: 1.0em;
+    }
+
+}
